@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,13 @@
 		1336BD4724DDB2EE00C53EC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1336BD4524DDB2EE00C53EC0 /* Main.storyboard */; };
 		1336BD4924DDB2EF00C53EC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1336BD4824DDB2EF00C53EC0 /* Assets.xcassets */; };
 		1336BD4C24DDB2EF00C53EC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1336BD4A24DDB2EF00C53EC0 /* LaunchScreen.storyboard */; };
+		1336BD5524DDB48C00C53EC0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336BD5324DDB48C00C53EC0 /* DetailViewController.swift */; };
+		1336BD5624DDB48C00C53EC0 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336BD5424DDB48C00C53EC0 /* CustomCell.swift */; };
+		1336BD5824DDB4CA00C53EC0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336BD5724DDB4CA00C53EC0 /* Model.swift */; };
+		1336BD5A24DDB4E800C53EC0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336BD5924DDB4E800C53EC0 /* ViewModel.swift */; };
+		1336BD5E24DDB4F400C53EC0 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336BD5B24DDB4F300C53EC0 /* Service.swift */; };
+		1336BD5F24DDB4F400C53EC0 /* HelperDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336BD5C24DDB4F300C53EC0 /* HelperDb.swift */; };
+		1336BD6024DDB4F400C53EC0 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336BD5D24DDB4F300C53EC0 /* Connectivity.swift */; };
 		341424284A0CE85CD124E9B1 /* Pods_CodeChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17803709C5B30B81BC8523B2 /* Pods_CodeChallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +32,13 @@
 		1336BD4824DDB2EF00C53EC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1336BD4B24DDB2EF00C53EC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1336BD4D24DDB2EF00C53EC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1336BD5324DDB48C00C53EC0 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		1336BD5424DDB48C00C53EC0 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		1336BD5724DDB4CA00C53EC0 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		1336BD5924DDB4E800C53EC0 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		1336BD5B24DDB4F300C53EC0 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		1336BD5C24DDB4F300C53EC0 /* HelperDb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperDb.swift; sourceTree = "<group>"; };
+		1336BD5D24DDB4F300C53EC0 /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		17803709C5B30B81BC8523B2 /* Pods_CodeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B49876458CDFFFCC768C7C /* Pods-CodeChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.debug.xcconfig"; path = "Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		AF2A213FCFFC93F77F26AD43 /* Pods-CodeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.release.xcconfig"; path = "Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +79,13 @@
 			children = (
 				1336BD3F24DDB2EE00C53EC0 /* AppDelegate.swift */,
 				1336BD4124DDB2EE00C53EC0 /* SceneDelegate.swift */,
+				1336BD5724DDB4CA00C53EC0 /* Model.swift */,
+				1336BD5424DDB48C00C53EC0 /* CustomCell.swift */,
+				1336BD5924DDB4E800C53EC0 /* ViewModel.swift */,
+				1336BD5D24DDB4F300C53EC0 /* Connectivity.swift */,
+				1336BD5C24DDB4F300C53EC0 /* HelperDb.swift */,
+				1336BD5B24DDB4F300C53EC0 /* Service.swift */,
+				1336BD5324DDB48C00C53EC0 /* DetailViewController.swift */,
 				1336BD4324DDB2EE00C53EC0 /* ViewController.swift */,
 				1336BD4524DDB2EE00C53EC0 /* Main.storyboard */,
 				1336BD4824DDB2EF00C53EC0 /* Assets.xcassets */,
@@ -88,7 +109,6 @@
 				A1B49876458CDFFFCC768C7C /* Pods-CodeChallenge.debug.xcconfig */,
 				AF2A213FCFFC93F77F26AD43 /* Pods-CodeChallenge.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,9 +227,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1336BD5F24DDB4F400C53EC0 /* HelperDb.swift in Sources */,
 				1336BD4424DDB2EE00C53EC0 /* ViewController.swift in Sources */,
+				1336BD6024DDB4F400C53EC0 /* Connectivity.swift in Sources */,
+				1336BD5E24DDB4F400C53EC0 /* Service.swift in Sources */,
 				1336BD4024DDB2EE00C53EC0 /* AppDelegate.swift in Sources */,
+				1336BD5624DDB48C00C53EC0 /* CustomCell.swift in Sources */,
+				1336BD5824DDB4CA00C53EC0 /* Model.swift in Sources */,
 				1336BD4224DDB2EE00C53EC0 /* SceneDelegate.swift in Sources */,
+				1336BD5524DDB48C00C53EC0 /* DetailViewController.swift in Sources */,
+				1336BD5A24DDB4E800C53EC0 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
