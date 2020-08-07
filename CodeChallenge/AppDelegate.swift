@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             fetchDataFromServer()
             sleep(3)
         } else {
-            print("Fetch Data from local Db")
+            print("Internet is not available")
         }
         
         
@@ -41,6 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
+    // MARK: Fetch data from the server
     func fetchDataFromServer() {
         
         let restService = APIService()
@@ -87,6 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    // MARK: Saved Data in Relem Db
     func savedDataInDB(model:DbModel) {
         HelperDb.dbHelper.saveData(model)
     }

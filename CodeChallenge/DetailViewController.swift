@@ -16,7 +16,7 @@ class DetailViewController: UIViewController {
     var txtDescString:String = ""
     var customCell:CustomCell!
     
-    
+    // MARK: load view
     override func loadView() {
         super.loadView()
         self.view  = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
@@ -30,6 +30,7 @@ class DetailViewController: UIViewController {
         self.setupUiConfiguration()
     }
     
+    // MARK: Set Up UI Configuration
     func setupUiConfiguration() {
         
         txtDescription = UITextView()
@@ -64,7 +65,7 @@ class DetailViewController: UIViewController {
         } else {
             txtDescription.isHidden = false
         }
-        
+
     }
 
 }

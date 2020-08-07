@@ -31,7 +31,7 @@ final class HelperDb {
         return results
     }
     
-    //// Delete all items from DB
+    // Delete all items from DB
     func deleteAllItems<Element: Object>(_ objects: Results<Element>) {
         do {
             realm.beginWrite()

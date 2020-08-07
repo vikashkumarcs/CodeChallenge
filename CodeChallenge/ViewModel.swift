@@ -11,7 +11,6 @@ import Foundation
 
 class ViewModel {
 
-    let apiUrl = "https://raw.githubusercontent.com/AxxessTech/Mobile-Projects/master/challenge.json"
     private let restService: APIService
     var reloadTableViewClosure: (()->())?
     

@@ -11,9 +11,8 @@ import Alamofire
 
 class APIService {
     
-    func GetData(urlString: String, dispatchGroup:DispatchGroup? = nil, complitionHandler:@escaping (Any)-> Void) {
+    func GetData(urlString: String, complitionHandler:@escaping (Any)-> Void) {
         
-        dispatchGroup?.enter()
         guard let url = URL(string: urlString) else { return }
         
         Alamofire.request(url, method: .get, parameters: [:]).validate().responseJSON { (response) in
@@ -23,7 +22,6 @@ class APIService {
             guard let value = response.result.value as? [Any] else {
                 return
             }
-            dispatchGroup?.leave()
             complitionHandler(value)
         }
     }

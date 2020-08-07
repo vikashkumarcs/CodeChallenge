@@ -12,9 +12,9 @@ import SDWebImage
 
 class CustomCell: UITableViewCell {
 
-    static let identifier: String = "CustomCell_identifier"
-
+    
     // MARK: Properties
+    static let identifier: String = "CustomCell_identifier"
     var idLabel: UILabel!
     var typeLabel: UILabel!
     var dateLabel: UILabel!
@@ -28,13 +28,14 @@ class CustomCell: UITableViewCell {
     // MARK: Initialization
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.configure()
+        self.setUIConfigure()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Reset UI for resuseable
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -48,7 +49,7 @@ class CustomCell: UITableViewCell {
     }
     
     // MARK: Custom Methods
-    func configure() {
+    func setUIConfigure() {
         
         viewContainer = UIView()
         self.addSubview(viewContainer)
@@ -125,6 +126,7 @@ class CustomCell: UITableViewCell {
         }
     }
     
+    // MARK: cell Configuration Method
     func cellConfiguration(cellInfo: DbModel, indexPath:IndexPath) {
         
         self.idLabel.text = cellInfo.id ?? "NA"
