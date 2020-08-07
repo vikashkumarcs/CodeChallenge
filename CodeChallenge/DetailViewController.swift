@@ -46,7 +46,7 @@ class DetailViewController: UIViewController {
         }
         
         imageView = UIImageView()
-        imageView.sizeToFit()
+        imageView.contentMode = .scaleAspectFit
         imageView.image = customCell.displayImg.image
         self.view.addSubview(imageView)
 

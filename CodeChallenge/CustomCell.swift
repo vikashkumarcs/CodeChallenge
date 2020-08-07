@@ -45,6 +45,8 @@ class CustomCell: UITableViewCell {
         self.dateLabel.text = nil
         self.txtDescriptionLabel.text = nil
         self.displayImg.image = nil
+        self.txtDescriptionLabel.isHidden = true
+        self.displayImg.isHidden = true
         
     }
     
@@ -54,7 +56,7 @@ class CustomCell: UITableViewCell {
         viewContainer = UIView()
         self.addSubview(viewContainer)
         viewContainer.snp.makeConstraints { (make) in
-            make.edges.equalTo(self).inset(UIEdgeInsets(top: 0.0, left: 10.0, bottom: 0.0, right: 10.0))
+            make.edges.equalTo(self).inset(UIEdgeInsets(top: 0.0, left: 5.0, bottom: 0.0, right: 5.0))
         }
         
         viewTop = UIView()
@@ -107,20 +109,20 @@ class CustomCell: UITableViewCell {
         contentView.addSubview(txtDescriptionLabel)
         
         txtDescriptionLabel.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(10)
-            make.right.equalToSuperview().offset(-10)
+            make.left.equalToSuperview().offset(5)
+            make.right.equalToSuperview().offset(-5)
             make.top.equalTo(contentView).offset(40)
             make.bottom.equalToSuperview()
         }
         
         displayImg = UIImageView()
-        displayImg.sizeToFit()
+        displayImg.contentMode = .scaleAspectFit
         displayImg.isHidden = true
         contentView.addSubview(displayImg)
         
         displayImg.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(10)
-            make.right.equalToSuperview().offset(-10)
+            make.left.equalToSuperview().offset(5)
+            make.right.equalToSuperview().offset(-5)
             make.top.equalTo(contentView).offset(40)
             make.bottom.equalToSuperview()
         }

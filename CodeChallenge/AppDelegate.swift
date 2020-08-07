@@ -18,12 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if Connectivity.isConnectedToInternet {
             fetchDataFromServer()
-            sleep(3)
         } else {
             print("Internet is not available")
         }
-        
-        
+    
         return true
     }
 
@@ -45,7 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func fetchDataFromServer() {
         
         let restService = APIService()
-        restService.GetData(urlString: apiUrlString) { (response) in
+        restService.GetData(urlString: apiUrlString) {[weak self] (response) in
             
             guard let json = response as?  [Any] else {
                 return
@@ -81,9 +79,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     $0.type! < $1.type!
                 }
             }
-            
             for model in collection {
-                self.savedDataInDB(model: model)
+                self?.savedDataInDB(model: model)
             }
         }
     }

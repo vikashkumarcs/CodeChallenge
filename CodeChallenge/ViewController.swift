@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         tableView = UITableView(frame: .zero)
         self.view.addSubview(tableView)
         tableView.snp.makeConstraints {
-            $0.edges.equalTo(self.view).inset(UIEdgeInsets(top: 50.0, left: 10.0, bottom: 0.0, right: 10.0))
+            $0.edges.equalTo(self.view).inset(UIEdgeInsets(top: 64.0, left: 0.0, bottom: 0.0, right: 0.0))
         }
     }
     
