@@ -41,6 +41,16 @@ class ViewController: UIViewController {
                 self?.tableView.reloadData()
             }
         }
+        
+        viewModal.showAlertClosure = { [weak self] () in
+            DispatchQueue.main.async {
+                if let message = self?.viewModal.alertMessage {
+                    self?.activityIndicator.stopAnimating()
+                    self?.showAlert( message )
+                    
+                }
+            }
+        }
     }
     
     func setupActivityIndicator() {
@@ -73,6 +83,11 @@ class ViewController: UIViewController {
     
     func fetchData() {
         viewModal.fetchData()
+    }
+    
+    func showAlert( _ message: String ) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

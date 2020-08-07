@@ -20,13 +20,24 @@ class ViewModel {
         }
     }
     
+    var showAlertClosure: (()->())?
+    var alertMessage: String? {
+        didSet {
+            self.showAlertClosure?()
+        }
+    }
+    
     init(services:APIService) {
         self.restService = services
     }
     
     func fetchData() {
         let dbData = HelperDb.dbHelper.fetchAllItems(DbModel.self)
-        self.dataSource.removeAll()
-        self.dataSource.append(contentsOf: dbData)
+        if dbData.count > 0 {
+            self.dataSource.removeAll()
+            self.dataSource.append(contentsOf: dbData)
+        } else {
+            self.alertMessage = "No any record is available"
+        }
     }
 }

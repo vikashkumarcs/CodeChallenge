@@ -60,7 +60,6 @@ class CustomCell: UITableViewCell {
         }
         
         viewTop = UIView()
-        viewTop.backgroundColor = UIColor.blue
         viewContainer.addSubview(viewTop)
         viewTop.snp.makeConstraints { (make) in
             make.left.equalToSuperview()
@@ -70,7 +69,6 @@ class CustomCell: UITableViewCell {
         }
         
         idLabel = UILabel()
-        idLabel.backgroundColor = UIColor.red
         viewTop.addSubview(idLabel)
         
         idLabel.snp.makeConstraints { (make) in
@@ -82,7 +80,6 @@ class CustomCell: UITableViewCell {
         
         typeLabel = UILabel()
         typeLabel.textAlignment = .center
-        typeLabel.backgroundColor = UIColor.green
         viewTop.addSubview(typeLabel)
         
         typeLabel.snp.makeConstraints { (make) in
@@ -93,7 +90,6 @@ class CustomCell: UITableViewCell {
         }
         
         dateLabel = UILabel()
-        dateLabel.backgroundColor = UIColor.yellow
         dateLabel.textAlignment = .right
         viewTop.addSubview(dateLabel)
         dateLabel.snp.makeConstraints { (make) in
@@ -143,7 +139,7 @@ class CustomCell: UITableViewCell {
             displayImg.sd_setImage(with: imageURL) {[weak self] (image, error, cache, urls) in
                 if (error != nil) {
                     // Failed to load image
-//                    cell.imageView.image = UIImage(named: "ico_placeholder")
+                    self?.displayImg.image = UIImage(named: "ico_placeholder")
                     print("Image not available")
                 } else {
                     // Successful in loading image

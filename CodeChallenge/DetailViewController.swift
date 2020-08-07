@@ -20,7 +20,7 @@ class DetailViewController: UIViewController {
     override func loadView() {
         super.loadView()
         self.view  = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
-        self.view .backgroundColor = UIColor.lightGray
+        self.view .backgroundColor = UIColor.white
     }
     
     override func viewDidLoad() {
