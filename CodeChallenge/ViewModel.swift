@@ -11,9 +11,7 @@ import Foundation
 
 class ViewModel {
 
-    private let restService: APIService
     var reloadTableViewClosure: (()->())?
-    
     public private(set) var dataSource: [DbModel] = [DbModel]() {
         didSet {
             self.reloadTableViewClosure?()
@@ -25,10 +23,6 @@ class ViewModel {
         didSet {
             self.showAlertClosure?()
         }
-    }
-    
-    init(services:APIService) {
-        self.restService = services
     }
     
     func fetchData() {

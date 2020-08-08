@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var activityIndicator: UIActivityIndicatorView!
     
     lazy var viewModal: ViewModel = {
-        let viewModal = ViewModel(services: APIService())
+        let viewModal = ViewModel()
         return viewModal
     }()
     
@@ -35,18 +35,18 @@ class ViewController: UIViewController {
     // MARK: Custom Methods
     func intializer()  {
         
-        viewModal.reloadTableViewClosure = { [weak self] () in
+        viewModal.reloadTableViewClosure = { [unowned self] () in
             DispatchQueue.main.async {
-                self?.activityIndicator.stopAnimating()
-                self?.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
             }
         }
         
-        viewModal.showAlertClosure = { [weak self] () in
+        viewModal.showAlertClosure = { [unowned self] () in
             DispatchQueue.main.async {
-                if let message = self?.viewModal.alertMessage {
-                    self?.activityIndicator.stopAnimating()
-                    self?.showAlert( message )
+                if let message = self.viewModal.alertMessage {
+                    self.activityIndicator.stopAnimating()
+                    self.showAlert( message )
                     
                 }
             }

@@ -135,7 +135,12 @@ class CustomCell: UITableViewCell {
         if cellInfo.type == "image" {
             displayImg.isHidden = false
             
-            let imageURL = URL(string: cellInfo.data!)!
+            guard let data = cellInfo.data,
+            let imageURL = URL(string: data) else {
+                self.displayImg.image = UIImage(named: "ico_placeholder")
+                return
+            }
+            
             displayImg.sd_setImage(with: imageURL) {[weak self] (image, error, cache, urls) in
                 if (error != nil) {
                     // Failed to load image
