@@ -10,10 +10,6 @@ import Foundation
 import RealmSwift
 
 
-class Models:Codable {
-    let dbModel:[DbModel]
-}
-
 class DbModel: Object, Codable {
     @objc dynamic var id:String?
     @objc dynamic var type:String?
