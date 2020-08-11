@@ -34,7 +34,7 @@ class DetailViewController: UIViewController {
     func setupUiConfiguration() {
         
         txtDescription = UITextView()
-        txtDescription.text = customCell.txtDescriptionLabel.text //txtDescString
+        txtDescription.text = customCell.txtDescriptionLabel.text 
         self.view.addSubview(txtDescription)
         
         

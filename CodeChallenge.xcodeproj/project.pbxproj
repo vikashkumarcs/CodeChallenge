@@ -20,6 +20,7 @@
 		1336BD5F24DDB4F400C53EC0 /* HelperDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336BD5C24DDB4F300C53EC0 /* HelperDb.swift */; };
 		1336BD6024DDB4F400C53EC0 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336BD5D24DDB4F300C53EC0 /* Connectivity.swift */; };
 		1336BD6824DDE3B600C53EC0 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336BD6724DDE3B600C53EC0 /* SplashScreen.swift */; };
+		1336BDAD24E2D93D00C53EC0 /* DisplayableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1336BDAC24E2D93D00C53EC0 /* DisplayableView.swift */; };
 		341424284A0CE85CD124E9B1 /* Pods_CodeChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17803709C5B30B81BC8523B2 /* Pods_CodeChallenge.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		1336BD5C24DDB4F300C53EC0 /* HelperDb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperDb.swift; sourceTree = "<group>"; };
 		1336BD5D24DDB4F300C53EC0 /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		1336BD6724DDE3B600C53EC0 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		1336BDAC24E2D93D00C53EC0 /* DisplayableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableView.swift; sourceTree = "<group>"; };
 		17803709C5B30B81BC8523B2 /* Pods_CodeChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1B49876458CDFFFCC768C7C /* Pods-CodeChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.debug.xcconfig"; path = "Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		AF2A213FCFFC93F77F26AD43 /* Pods-CodeChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeChallenge.release.xcconfig"; path = "Target Support Files/Pods-CodeChallenge/Pods-CodeChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				1336BD4A24DDB2EF00C53EC0 /* LaunchScreen.storyboard */,
 				1336BD6724DDE3B600C53EC0 /* SplashScreen.swift */,
 				1336BD4D24DDB2EF00C53EC0 /* Info.plist */,
+				1336BDAC24E2D93D00C53EC0 /* DisplayableView.swift */,
 			);
 			path = CodeChallenge;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1336BD5F24DDB4F400C53EC0 /* HelperDb.swift in Sources */,
+				1336BDAD24E2D93D00C53EC0 /* DisplayableView.swift in Sources */,
 				1336BD4424DDB2EE00C53EC0 /* ViewController.swift in Sources */,
 				1336BD6024DDB4F400C53EC0 /* Connectivity.swift in Sources */,
 				1336BD5E24DDB4F400C53EC0 /* Service.swift in Sources */,

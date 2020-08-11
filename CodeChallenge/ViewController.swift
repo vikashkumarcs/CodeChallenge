@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, DisplayAlert, DisplayActivityIndicator {
 
     // MARK: Properties
     var tableView: UITableView!
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         viewModal.reloadTableViewClosure = { [unowned self] () in
             DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
+                self.hideActivityIndicator(activityIndicator: self.activityIndicator)
                 self.tableView.reloadData()
             }
         }
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         viewModal.showAlertClosure = { [unowned self] () in
             DispatchQueue.main.async {
                 if let message = self.viewModal.alertMessage {
-                    self.activityIndicator.stopAnimating()
+                    self.hideActivityIndicator(activityIndicator: self.activityIndicator)
                     self.showAlert( message )
                     
                 }
@@ -54,15 +54,8 @@ class ViewController: UIViewController {
     }
     
     func setupActivityIndicator() {
-        activityIndicator = UIActivityIndicatorView()
-        activityIndicator.style = UIActivityIndicatorView.Style.large
-        self.view.addSubview(activityIndicator)
-        activityIndicator.layer.zPosition = 1
-        
-        activityIndicator.color = UIColor.black
-        activityIndicator.startAnimating()
-        
-        activityIndicator.snp.makeConstraints {
+        activityIndicator = showActivityIndicator()
+        self.activityIndicator.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
@@ -86,8 +79,7 @@ class ViewController: UIViewController {
     }
     
     func showAlert( _ message: String ) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        self.present(alert, animated: true, completion: nil)
+        self.disPlayAlert(title: "Alert", message: message)
     }
     
 }

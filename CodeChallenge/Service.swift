@@ -11,18 +11,29 @@ import Alamofire
 
 class APIService {
     
-    func GetData(urlString: String, complitionHandler:@escaping (Any)-> Void) {
+    func GetData(urlString: String, complitionHandler:@escaping ([DbModel])-> Void) {
         
         guard let url = URL(string: urlString) else { return }
         
         Alamofire.request(url, method: .get, parameters: [:]).validate().responseJSON { (response) in
             guard response.result.isSuccess else {
+                print("Failed")
                 return
             }
-            guard let value = response.result.value as? [Any] else {
+            
+            guard let data = response.data else {
+                print("No any records")
                 return
             }
-            complitionHandler(value)
+            
+            do {
+                let collection = try JSONDecoder().decode([DbModel].self, from: data)
+                complitionHandler(collection)
+                
+            } catch {
+                print("Error")
+            }
+            
         }
     }
 }

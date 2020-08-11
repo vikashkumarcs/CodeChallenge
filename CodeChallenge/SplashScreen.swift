@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SplashScreen: UIViewController {
-
+class SplashScreen: UIViewController, DisplayActivityIndicator {
+    
     let apiUrlString = "https://raw.githubusercontent.com/AxxessTech/Mobile-Projects/master/challenge.json"
 
     var activityIndicator: UIActivityIndicatorView!
@@ -29,15 +29,8 @@ class SplashScreen: UIViewController {
     }
     
     func setupActivityIndicator() {
-        activityIndicator = UIActivityIndicatorView()
-        activityIndicator.style = UIActivityIndicatorView.Style.large
-        self.view.addSubview(activityIndicator)
-        activityIndicator.layer.zPosition = 1
-        
-        activityIndicator.color = UIColor.black
-        activityIndicator.startAnimating()
-        
-        activityIndicator.snp.makeConstraints {
+        activityIndicator = showActivityIndicator()
+        self.activityIndicator.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
     }
@@ -46,50 +39,19 @@ class SplashScreen: UIViewController {
     func fetchDataFromServer() {
         
         let restService = APIService()
-        restService.GetData(urlString: apiUrlString) {[weak self] (response) in
-            
-            guard let json = response as?  [Any] else {
-                return
-            }
-            
-            var collection = [DbModel]()
-            for item in json {
-                let json = item as? [String:Any]
-                
-                let model = DbModel()
-                
-                if let id = json?["id"],
-                    let comments = id as? String {
-                    model.id = comments
-                }
-                
-                if let type = json?["type"],
-                    let comments = type as? String {
-                    model.type = comments
-                }
-                
-                if let date = json?["date"],
-                    let comments = date as? String {
-                    model.date1 = comments
-                }
-                
-                if let data = json?["data"],
-                    let comments = data as? String {
-                    model.data = comments
-                }
-                collection.append(model)
-                collection.sort {
-                    $0.type! < $1.type!
-                }
-            }
+        restService.GetData(urlString: apiUrlString) { [weak self] (response) in
             
             let results = HelperDb.dbHelper.fetchAllItems(DbModel.self)
             HelperDb.dbHelper.deleteAllItems(results)
             
-            for model in collection {
-                self?.savedDataInDB(model: model)
+            var collection = response
+            collection.sort {
+                $0.type! < $1.type!
             }
             
+            for dbModel in collection {
+                self?.savedDataInDB(model: dbModel)
+            }
             self?.navigateToNextScreen()
         }
     }
@@ -100,7 +62,7 @@ class SplashScreen: UIViewController {
     }
     
     func navigateToNextScreen() {
-        self.activityIndicator.stopAnimating()
+        hideActivityIndicator(activityIndicator: activityIndicator)
         let navigationController = UIApplication.shared.windows.filter {$0.isKeyWindow}.first?.rootViewController as! UINavigationController
         navigationController.isNavigationBarHidden = false
         navigationController.view.backgroundColor = UIColor.white
